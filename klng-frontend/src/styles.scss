@@ -1,0 +1,175 @@
+/*#region Variables*/
+
+$blackcolor: #080013;
+$whitecolor: #f9f5ff;
+
+$primarylight: #D5C2F0;
+$primarylightmed: #9048F4;
+$primarymed: #5C11C5; /* primary */
+$primarydarkmed: #3D068B;
+$primarydark: #25084D;
+
+$secondarylight: #FFFAC9;
+$secondarylightmed: #FFEC3A;
+$secondarymed: #FFC500; /* secondary */
+$secondarydarkmed: #CDBA00;
+$secondarydark: #716702;
+
+$tertiarylight: #EDBCEF;
+$tertiarylightmed: #ED39F3;
+$tertiarymed: #BA01C0; /* tertiary */
+$tertiarydarkmed: #810086;
+$tertiarydark: #48014A;
+
+$quarternarylight: #F5FEC7;
+$quarternarylightmed: #DEFE3A;
+$quarternarymed: #D1F900; /* quarternary */
+$quarternarydarkmed: #A7C700;
+$quarternarydark: #5C6E01;
+
+/*#region @mixins*/
+@mixin light-on-dark-1 {
+  color: $whitecolor;
+  background-color: $blackcolor;
+    }
+
+@mixin light-on-dark-purple {
+    color: $primarylight;
+    background-color: $blackcolor;
+    }
+
+@mixin light-on-dark-gold {
+    color: $secondarylight;
+    background-color: $secondarydark;
+    }
+
+@mixin light-on-dark-magenta {
+    color: $tertiarylight;
+    background-color: $tertiarydark;
+    }
+
+@mixin light-on-dark-lime {
+    color: $quarternarylight;
+    background-color: $quarternarydark;
+    }
+
+@mixin dark-on-light {
+  color: $whitecolor;
+  background-color: $blackcolor;
+    }
+
+@mixin dark-on-light-purple {
+    color: $primarydark;
+    background-color: $primarylight;
+    }
+
+@mixin dark-on-light-gold {
+    color: $secondarydark;
+    background-color: $secondarylight;
+    }
+
+@mixin dark-on-light-magenta {
+    color: $tertiarydark;
+    background-color: $tertiarylight;
+    }
+
+@mixin dark-on-light-lime {
+    color: $quarternarydark;
+    background-color: $quarternarylight;
+    }
+
+
+@mixin combo1 {
+    background-color: $secondarymed;
+    background-image: linear-gradient(45deg, $tertiarymed, $quarternarylightmed);
+    background-clip: text;
+    /* background-size: 100%; */
+    /* background-repeat: repeat; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+@mixin gradient1 {
+    background-image: linear-gradient($quarternarydarkmed, $tertiarylightmed);
+}
+
+@mixin gradient1 {
+    background-image: linear-gradient($primarylightmed , $secondarylightmed);
+}
+
+/*#endregion @mixins*/
+
+/*#endregion Variables*/
+
+
+html {
+    width: 100%;
+
+}
+
+
+body {
+    width: 100%;
+
+}
+
+.App {
+    width: 100%;
+
+}
+
+.HeaderDiv {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .searchDiv {
+        float: left;
+        
+    }
+
+    .logoDiv {
+        margin: 0 auto;
+        
+    }
+
+    .accountDiv {
+        float: right;
+
+    }
+
+}
+
+.NavDiv {
+    width: 100%;
+    justify-content: space-around;
+
+}
+
+
+
+.Main {
+    width: 100%;
+
+    .ProfDiv {
+
+
+    }
+
+    .PersonDiv {
+        
+
+    }
+
+
+
+}
+
+
+.FooterDiv {
+    width: 100%;
+
+
+}
