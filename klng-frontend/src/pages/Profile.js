@@ -1,6 +1,8 @@
 import Nav from '../components/Nav'
 import { useState } from 'react'
-import AbtForm from './ProfileForms/AbtForm'
+import AbtForm from '../components/AbtForm'
+import AddProjForm from '../components/AddProjForm'
+import EditProjForm from '../components/EditProjForm'
 
 //#region - modal styling - needs to go here/please dont remove it
 const wrap = {
@@ -15,99 +17,10 @@ const prof = {
 }
 //#endregion
 
+// did not write the modal codes, will work on it monday, im gonna take a break from coding tomorrow. Also, would you mind working on other pages that is not css/scss? I also ran into an issue when trying to see this page live, would you mind taking a looksies please?
+
 function Profile(props){
 
-    // states
-    //#region 
-        // add PROJECT state
-    const [newProj, setNewProj] = useState({
-        name: '',
-        images: '',
-        link: '',
-        desc: '',
-    })
-        // edit PROJECT state
-    const [editProj, setEditProj] = useState({
-        name: '',
-        images: '',
-        link: '',
-        desc: '',
-    })
-        // edit PROFILE state
-    const [editProf, setEditProf] = useState({
-        images: '',
-        name: '',
-        email: '',
-        desc: '', 
-        github_link: '',
-        linkedin_link: '',
-    })
-    //#endregion
-
-    // handleChange
-    //#region 
-        // new PROJECT 
-    const handleChange1 = (event) => {
-        setNewProj({ ...newProj, [event.target.name]: event.target.value})
-    }
-        // edit PROJECT
-    const handleChange2 = (event) => {
-        setEditProj({ ...editProj, [event.target.name]: event.target.value})
-    }
-        // edit PROFILE
-    const handleChange3 = (event) => {
-        setEditProf({ ...editProf, [event.target.name]: event.target.value})
-    }
-    //#endregion
-
-    // submitChange
-    //#region 
-        // add PROJECT
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        props.createProj(newProj);
-        setNewProj({
-            name: '',
-            images: '',
-            link: '',
-            desc: '',        
-        })
-        props.updateProj(editProj);
-        setEditProj({
-            name: '',
-            images: '',
-            link: '',
-            desc: '',        
-        })
-        
-    }
-        // edit PROJECT
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     props.updateProj(editProj);
-    //     setEditProj({
-    //         name: '',
-    //         images: '',
-    //         link: '',
-    //         desc: '',        
-    //     })
-    //     setIsOpen(false)
-    // }
-        // edit PROFILE
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     props.updateProf(editProf);
-    //     setEditProf({
-    //         images: '',
-    //         name: '',
-    //         email: '',
-    //         desc: '', 
-    //         github_link: '',
-    //         linkedin_link: '',      
-    //     })
-    //     setIsOpen(false)
-    // }
-    //#endregion
 
     const loaded = () => {
         return (
@@ -146,6 +59,8 @@ function Profile(props){
         <section>
         <div className='ProfDiv'>
             <Nav />
+            <AbtForm />
+            {/* find a way to connect the AbtForm page here. AbtForm has the modal and about edit forms */}
             <br/>
             <div className="editAbtDiv">
                 <h3>avatar image</h3>
@@ -156,10 +71,14 @@ function Profile(props){
             </div>
             <br/>
             <div className="addDiv">
+                <AddProjForm />
+                {/* find a way to connect the AddProjForm here */}
                 <button className="addbtn">Add Project</button>
             </div>
             <br/>
             <div className="editListProjDiv">
+                <EditProjForm />
+                {/* find a way to connect the EditProjForm here */}
                 <h3>List of Projects</h3>
                     <div className="editSingleProjDiv">
                         <h4>Project name with edit icon</h4>

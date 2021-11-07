@@ -1,6 +1,6 @@
-import Profile from '../Profile'
 import { useState } from 'react'
-import Modal from '../../components/Modal'
+import Modal from './Modal'
+
 
 const wrap = {
     position: 'relative',
@@ -13,30 +13,18 @@ const prof = {
     padding: '10px'
 }
 
-function AbtForm(props){
-    const [editProf, setEditProf] = useState({
-        images: '',
-        name: '',
-        email: '',
-        desc: '', 
-        github_link: '',
-        linkedin_link: '',
-    })
+function EditProjForm(props){
+    const [editProj, setEditProj] = useState('');
 
     const handleChange = (event) => {
-        setEditProf({...editProf, [event.target.name]: event.target.value})
+        setEditProj({...editProj, [event.target.name]: event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateProf({
-            images: '',
-            name: '',
-            email: '',
-            desc: '', 
-            github_link: '',
-            linkedin_link: '',
-        })
+        props.updateProj(editProj)
+
+        // need setIsOpen here for modal
         setIsOpen(false)
     }
 
@@ -45,9 +33,9 @@ function AbtForm(props){
         <>
             <section>
                 <div className="modal" style={wrap}>
-                    <button onClick={() => setIsOpen(true)}className="editBtn">Edit 🖌</button>
+                    <button onClick={() => setIsOpen(true)}className="editProjBtn">🖌</button>
                     <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
-                        <form className="abtForm" onSubmit={handleSubmit}>
+                        <form className="editProjForm" onSubmit={handleSubmit}>
                             <input className="editName" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -76,6 +64,7 @@ function AbtForm(props){
                                 placeholder='desc'
                                 onChange={handleChange}
                             />
+                            <input type="submit" className="updateBtn" value="Update Project"/>
                         </form>
                     </Modal>
                 </div>
@@ -84,4 +73,4 @@ function AbtForm(props){
     )
 }
 
-export default AbtForm;
+export default EditProjForm;

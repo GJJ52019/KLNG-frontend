@@ -1,6 +1,6 @@
-import Profile from '../Profile'
 import { useState } from 'react'
-import Modal from '../../components/Modal'
+import Modal from './Modal'
+
 
 const wrap = {
     position: 'relative',
@@ -13,8 +13,8 @@ const prof = {
     padding: '10px'
 }
 
-function AbtForm(props){
-    const [editProf, setEditProf] = useState({
+function AddProjForm(props){
+    const [newProj, setNewProj] = useState({
         images: '',
         name: '',
         email: '',
@@ -24,18 +24,17 @@ function AbtForm(props){
     })
 
     const handleChange = (event) => {
-        setEditProf({...editProf, [event.target.name]: event.target.value})
+        setNewProj({...newProj, [event.target.name]: event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateProf({
-            images: '',
+        props.createProj(newProj)
+        setNewProj({
             name: '',
-            email: '',
+            images: '',
+            link: '',
             desc: '', 
-            github_link: '',
-            linkedin_link: '',
         })
         setIsOpen(false)
     }
@@ -45,9 +44,9 @@ function AbtForm(props){
         <>
             <section>
                 <div className="modal" style={wrap}>
-                    <button onClick={() => setIsOpen(true)}className="editBtn">Edit 🖌</button>
+                    <button onClick={() => setIsOpen(true)}className="addProjBtn">Add Project</button>
                     <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
-                        <form className="abtForm" onSubmit={handleSubmit}>
+                        <form className="projForm" onSubmit={handleSubmit}>
                             <input className="editName" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -62,11 +61,11 @@ function AbtForm(props){
                                 placeholder='images'
                                 onChange={handleChange}
                             />
-                            <input className="editEmail" 
+                            <input className="editGit" 
                                 type='text'
                                 value='text' //<-- fix this later
-                                name='email'
-                                placeholder='email'
+                                name='github_link'
+                                placeholder='github project link'
                                 onChange={handleChange}
                             />
                             <input className="editDesc" 
@@ -76,21 +75,7 @@ function AbtForm(props){
                                 placeholder='desc'
                                 onChange={handleChange}
                             />
-                            <input className="editGit" 
-                                type='text'
-                                value='text' //<-- fix this later
-                                name='github_link'
-                                placeholder='github_link'
-                                onChange={handleChange}
-                            />
-                            <input className="editLinked" 
-                                type='text'
-                                value='text' //<-- fix this later
-                                name='linkedin_link'
-                                placeholder='linkedin_link'
-                                onChange={handleChange}
-                            />
-                            <input type="submit" className="abtBtn" value="Update" />
+                            <input type="submit" className="addBtn" value="Add Project"/>
                         </form>
                     </Modal>
                 </div>
@@ -99,4 +84,4 @@ function AbtForm(props){
     )
 }
 
-export default AbtForm;
+export default AddProjForm;
