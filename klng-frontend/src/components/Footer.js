@@ -1,7 +1,7 @@
 function Footer(props) {
     return(
         <div className="FooterDiv">
-        <h4>© 2021 KLNG</h4>
+            <h4>© 2021 KLNG</h4>
         </div>
     )
 }

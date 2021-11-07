@@ -106,6 +106,7 @@ $quarternarydark: #5C6E01;
 
 html {
     width: 100%;
+    // background-color: grey;
 
 }
 
@@ -117,27 +118,63 @@ body {
 
 .App {
     width: 100%;
+    // background-color: lightgray;
 
 }
 
 .HeaderDiv {
     width: 100%;
+    padding: 5px;
+    background-color: $primarylightmed;
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    contain: content;
 
     .searchDiv {
         float: left;
-        
+        width: 25%;
+        position: relative;
+
+
+        form {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            
+            .searchfield {
+                width: 100%;
+                opacity: .7;
+                @include light-on-dark-1;
+            }
+        }
     }
 
     .logoDiv {
         margin: 0 auto;
+        text-align: center;
+        width: 50%;
         
+        img {
+            width: 20%;
+            transition: transform 100ms;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
     }
 
     .accountDiv {
         float: right;
+        width: 25%;
+        position: relative;
 
+        .accountlink {
+            float: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        
     }
 
 }
@@ -149,17 +186,41 @@ body {
 }
 
 
-
 .Main {
     width: 100%;
+    // padding: 5px;
+    // height: 100vh;
 
-    .ProfDiv {
 
 
-    }
+    .personDiv {
+        width: 100%;
+        // background-color: green;
 
-    .PersonDiv {
-        
+        .avatarDiv {
+            width: 100%;
+            // background-color: blue;
+            text-align: center;
+    
+        }
+    
+        .nameDiv {
+            width: 100%;
+            // background-color: blue;
+            text-align: center;
+        }
+    
+        .descripDiv {
+            width: 100%;
+            // background-color: blue;
+            text-align: center;
+        }
+    
+        .imageDiv {
+            width: 100%;
+            // background-color: blue;
+            text-align: center;
+        }
 
     }
 
@@ -167,9 +228,26 @@ body {
 
 }
 
+.Main::after {
+    background-image: url(./images/images/AdobeStock_187291550.jpeg);
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    bottom: -20px;
+    left: 0px;
+    opacity: .4;
+    z-index: -1;
+}
+
 
 .FooterDiv {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-
+    background: $blackcolor;
+    text-align: center;
+    color: $secondarymed;
 
 }

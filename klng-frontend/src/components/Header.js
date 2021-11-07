@@ -1,19 +1,25 @@
 import { Link } from 'react-router-dom'
+import Logofourcolor from '../images/logo/KLNG_logo_dualcolorflat.png'
 
 function Header(props) {
     return(
         <div className='HeaderDiv'>
             <div className='searchDiv'>
-                {/* search bar goes here */}
+                {/* temporary search input */}
+                <form action="">
+                    <input className="searchfield" type="search bar" placeholder="Enter Keyword"/>
+                    <input type="submit" value="Search"/>
+                </form>
             </div>
 
             <div className='logoDiv'>
-                <Link to='/'>KLNG</Link>
+                <Link to='/'><img src={Logofourcolor}/></Link>
             </div>
 
             <div className="accountDiv">
-                <Link to='/me'>User</Link>
-                <Link to='/login'>Login</Link>
+                <Link className="accountlink" to='/me' hidden>User</Link>
+                <br />
+                <Link className="accountlink" to='/login'>Login</Link>
             </div>
         </div>
     )

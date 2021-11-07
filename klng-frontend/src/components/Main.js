@@ -26,7 +26,7 @@ function Main(props){
     // ^^^how do we create something if we dont have a create route backend?? 
 
     return (
-        <div className='main'>
+        <div className='Main'>
             <Routes>
                 {/* <Route path='/' render={()=> {<Splash />}} /> */}
                 <Route path='/' element={<Home />} />
