@@ -15,12 +15,10 @@ const prof = {
 
 function AddProjForm(props){
     const [newProj, setNewProj] = useState({
-        images: '',
         name: '',
-        email: '',
-        desc: '', 
-        github_link: '',
-        linkedin_link: '',
+        images: '',
+        link: '',
+        desc: '',
     })
 
     const handleChange = (event) => {
@@ -47,34 +45,38 @@ function AddProjForm(props){
                     <button onClick={() => setIsOpen(true)}className="addProjBtn">Add Project</button>
                     <Modal open={isOpen} onClose={()=> setIsOpen(false)}>
                         <form className="projForm" onSubmit={handleSubmit}>
-                            <input className="editName" 
+                            <input className="addName" 
                                 type='text'
                                 value='text' //<-- fix this later
                                 name='name'
                                 placeholder='name'
                                 onChange={handleChange}
                             />
-                            <input className="editImages" 
+                            <br />
+                            <input className="addImages" 
                                 type='text'
                                 value='text' //<-- fix this later
                                 name='images'
                                 placeholder='images'
                                 onChange={handleChange}
                             />
-                            <input className="editGit" 
+                            <br />
+                            <input className="addGit" 
                                 type='text'
                                 value='text' //<-- fix this later
                                 name='github_link'
                                 placeholder='github project link'
                                 onChange={handleChange}
                             />
-                            <input className="editDesc" 
+                            <br />
+                            <input className="addDesc" 
                                 type='text'
                                 value='text' //<-- fix this later
                                 name='desc'
                                 placeholder='desc'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input type="submit" className="addBtn" value="Add Project"/>
                         </form>
                     </Modal>

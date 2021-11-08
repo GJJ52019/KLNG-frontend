@@ -55,6 +55,7 @@ function AbtForm(props){
                                 placeholder='name'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editImages" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -62,6 +63,7 @@ function AbtForm(props){
                                 placeholder='images'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editEmail" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -69,6 +71,7 @@ function AbtForm(props){
                                 placeholder='email'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editDesc" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -76,6 +79,7 @@ function AbtForm(props){
                                 placeholder='desc'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editGit" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -83,6 +87,7 @@ function AbtForm(props){
                                 placeholder='github_link'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editLinked" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -90,6 +95,7 @@ function AbtForm(props){
                                 placeholder='linkedin_link'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input type="submit" className="abtBtn" value="Update" />
                         </form>
                     </Modal>

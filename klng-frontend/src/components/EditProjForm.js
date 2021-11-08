@@ -14,7 +14,12 @@ const prof = {
 }
 
 function EditProjForm(props){
-    const [editProj, setEditProj] = useState('');
+    const [editProj, setEditProj] = useState({
+        name: '',
+        images: '',
+        link: '',
+        desc: '',
+    });
 
     const handleChange = (event) => {
         setEditProj({...editProj, [event.target.name]: event.target.value})
@@ -43,6 +48,7 @@ function EditProjForm(props){
                                 placeholder='name'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editImages" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -50,6 +56,7 @@ function EditProjForm(props){
                                 placeholder='images'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editGit" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -57,6 +64,7 @@ function EditProjForm(props){
                                 placeholder='github project link'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input className="editDesc" 
                                 type='text'
                                 value='text' //<-- fix this later
@@ -64,7 +72,9 @@ function EditProjForm(props){
                                 placeholder='desc'
                                 onChange={handleChange}
                             />
+                            <br />
                             <input type="submit" className="updateBtn" value="Update Project"/>
+                            <input type="submit" className='delBtn' value='Delete'/>
                         </form>
                     </Modal>
                 </div>
