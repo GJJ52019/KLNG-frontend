@@ -23,14 +23,14 @@ function Splash(props){
                 </div>
 
                 <div className="enterDiv">
-                    <button className="enterbtn">Enter</button>
+                    <Link to="/home"><button className="enterbtn">Enter</button></Link>
                 </div>
 
-                <div className="loginDiv">
+                <div className="loginSplashDiv">
                     <Link to='/login'>Login</Link>
                 </div>
 
-                <div className="registerDiv">
+                <div className="registerSplashDiv">
                     <Link to='/register'>Register</Link>
                 </div>
             </div>

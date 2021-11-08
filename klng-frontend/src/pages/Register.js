@@ -22,7 +22,7 @@ function Register(props){
 
                     <input type="text" name="" id="linkedin" placeholder="LinkedIn"/>                       
 
-                    <input type="submit" value="Submit" id="regsubmit"/>
+                    <input type="submit" value="Register" id="regsubmit"/>
                 </form>
             </div>
 

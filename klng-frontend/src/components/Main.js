@@ -29,7 +29,8 @@ function Main(props){
         <div className='Main'>
             <Routes>
                 {/* <Route path='/' render={()=> {<Splash />}} /> */}
-                <Route path='/' element={<Home />} />
+                <Route path='/' element={<Splash />} />
+                <Route path='/home' element={<Home />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/:id/about' element={<ShowPerson />} />

@@ -366,6 +366,13 @@ body {
     width: 100%;
     background: $primarydark;
     text-align: center;
-    color: $secondarymed;
+
+    :hover {
+        color: $quarternarylight;
+    }
+
+    :visited, :link, :active {
+        color: $quarternarydarkmed;
+    }
 
 }

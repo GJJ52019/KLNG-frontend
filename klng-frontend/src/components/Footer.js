@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 function Footer(props) {
     return(
         <div className="FooterDiv">
-            <h4>© 2021 KLNG</h4>
+            <Link to="/"><h4>© 2021 KLNG</h4></Link>
         </div>
     )
 }

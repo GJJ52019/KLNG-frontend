@@ -10,7 +10,7 @@ function Login(props){
                 <form action="">
                     <input type="text" placeholder="username" id="username"/>
                     <input type="password" name="" id="password" placeholder="password"/>
-                    <input type="submit" value="Submit" id="loginsubmit"/>
+                    <input type="submit" value="Log In" id="loginsubmit"/>
                 </form>
             </div>
 
