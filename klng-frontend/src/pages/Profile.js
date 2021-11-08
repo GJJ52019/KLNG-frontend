@@ -3,7 +3,6 @@ import { useState } from 'react'
 import AbtForm from '../components/AbtForm'
 import AddProjForm from '../components/AddProjForm'
 import EditProjForm from '../components/EditProjForm'
-import Modal from '../components/Modal'
 
 //#region - modal styling - needs to go here/please dont remove it
 const wrap = {
@@ -17,8 +16,6 @@ const prof = {
     padding: '10px'
 }
 //#endregion
-
-// did not write the modal codes, will work on it monday, im gonna take a break from coding tomorrow. Also, would you mind working on other pages that is not css/scss? I also ran into an issue when trying to see this page live, would you mind taking a looksies please?
 
 function Profile(props){
 
@@ -61,7 +58,6 @@ function Profile(props){
                 <div className='ProfDiv'>
                     <Nav />
                     <AbtForm />
-                    {/* find a way to connect the AbtForm page here. AbtForm has the modal and about edit forms */}
                     <br/>
                     <div className="ProfContentDiv">
                         <div className="editAbtDiv">
@@ -73,23 +69,19 @@ function Profile(props){
                         </div>
                         <br/>
                         <div className="addDiv">
-                            {/* <AddProjForm /> */}
-                            {/* find a way to connect the AddProjForm here */}
-                            <button className="addbtn">Add Project</button>
+                            <AddProjForm />
                         </div>
                         <br/>
                         <div className="editListProjDiv">
-                            {/* <EditProjForm /> */}
-                            {/* find a way to connect the EditProjForm here */}
                             <h3>List of Projects</h3>
                                 <div className="editSingleProjDiv">
-                                    <h4>Project name with edit icon</h4>
+                                    <h4>Project name <EditProjForm /></h4>
                                 </div>
                             <h5>project image</h5>
                         </div>
                     </div>
-
                 </div>
+                {/* {props.prof ? loaded() : loading()} */}
             </section>
         </div>
     )
