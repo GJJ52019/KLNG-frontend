@@ -6,12 +6,28 @@ function Register(props){
             <div className="regTitleDiv">Register</div>
 
             <div className="inputDiv">
-                <h4>name, email, password inputs here</h4>
-                <h4>optional github/linkedin inputs here</h4>
+
+                <form action="">
+                    <h3>Required</h3>
+                    
+                    <input type="text" placeholder="username" id="username"/>
+
+                    <input type="email" placeholder="email" id="email"/>
+
+                    <input type="password" name="" id="password" placeholder="password"/>
+
+                    <h3>Optional</h3>
+
+                    <input type="text" name="" id="github" placeholder="github"/>
+
+                    <input type="text" name="" id="linkedin" placeholder="LinkedIn"/>                       
+
+                    <input type="submit" value="Submit" id="regsubmit"/>
+                </form>
             </div>
 
             <div className="submitDiv">
-                <button className="regbtn">Register</button>
+                <button className="regbtn" hidden>Register</button>
                 <Link to='/login'>Login</Link>
             </div>
         </div>

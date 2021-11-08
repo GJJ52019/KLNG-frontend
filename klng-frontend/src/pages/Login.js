@@ -7,11 +7,15 @@ function Login(props){
             <div className="logTitleDiv">Login</div>
 
             <div className="inputDiv">
-                <h4>inputs goes here</h4>
+                <form action="">
+                    <input type="text" placeholder="username" id="username"/>
+                    <input type="password" name="" id="password" placeholder="password"/>
+                    <input type="submit" value="Submit" id="loginsubmit"/>
+                </form>
             </div>
 
             <div className="submitDiv">
-                <button className="loginbtn">Login</button>
+                <button className="loginbtn" hidden>Login</button>
                 <Link to='/register'>Register</Link>
             </div>
 
