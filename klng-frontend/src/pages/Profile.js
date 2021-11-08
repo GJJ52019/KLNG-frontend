@@ -3,6 +3,7 @@ import { useState } from 'react'
 import AbtForm from '../components/AbtForm'
 import AddProjForm from '../components/AddProjForm'
 import EditProjForm from '../components/EditProjForm'
+import Modal from '../components/Modal'
 
 //#region - modal styling - needs to go here/please dont remove it
 const wrap = {
@@ -55,39 +56,42 @@ function Profile(props){
     }
 
     return (
-        <>
-        <section>
-        <div className='ProfDiv'>
-            <Nav />
-            <AbtForm />
-            {/* find a way to connect the AbtForm page here. AbtForm has the modal and about edit forms */}
-            <br/>
-            <div className="editAbtDiv">
-                <h3>avatar image</h3>
-                <h1>name here</h1>
-                <h3>email here</h3>
-                <h4>about desc here</h4>
-                <h3>links here</h3>
-            </div>
-            <br/>
-            <div className="addDiv">
-                <AddProjForm />
-                {/* find a way to connect the AddProjForm here */}
-                <button className="addbtn">Add Project</button>
-            </div>
-            <br/>
-            <div className="editListProjDiv">
-                <EditProjForm />
-                {/* find a way to connect the EditProjForm here */}
-                <h3>List of Projects</h3>
-                    <div className="editSingleProjDiv">
-                        <h4>Project name with edit icon</h4>
+        <div>
+            <section>
+                <div className='ProfDiv'>
+                    <Nav />
+                    <AbtForm />
+                    {/* find a way to connect the AbtForm page here. AbtForm has the modal and about edit forms */}
+                    <br/>
+                    <div className="ProfContentDiv">
+                        <div className="editAbtDiv">
+                            <h3>avatar image</h3>
+                            <h1>name here</h1>
+                            <h3>email here</h3>
+                            <h4>about desc here</h4>
+                            <h3>links here</h3>
+                        </div>
+                        <br/>
+                        <div className="addDiv">
+                            {/* <AddProjForm /> */}
+                            {/* find a way to connect the AddProjForm here */}
+                            <button className="addbtn">Add Project</button>
+                        </div>
+                        <br/>
+                        <div className="editListProjDiv">
+                            {/* <EditProjForm /> */}
+                            {/* find a way to connect the EditProjForm here */}
+                            <h3>List of Projects</h3>
+                                <div className="editSingleProjDiv">
+                                    <h4>Project name with edit icon</h4>
+                                </div>
+                            <h5>project image</h5>
+                        </div>
                     </div>
-                <h5>project image</h5>
-            </div>
+
+                </div>
+            </section>
         </div>
-        </section>
-        </>
     )
 }
 

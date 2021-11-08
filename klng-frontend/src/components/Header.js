@@ -13,7 +13,7 @@ function Header(props) {
             </div>
 
             <div className='logoDiv'>
-                <Link to='/'><img src={Logofourcolor}/></Link>
+                <Link to='/home'><img src={Logofourcolor}/></Link>
             </div>
 
             <div className="accountDiv">
