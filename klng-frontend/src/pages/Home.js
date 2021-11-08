@@ -1,6 +1,7 @@
 import { Links } from 'react-router-dom'
 
 function Home(props){
+    
     return (
         <div className="personDiv">
             <div className="avatarDiv">
@@ -17,6 +18,10 @@ function Home(props){
 
             <div className="imageDiv">
                 <h5>project image goes here</h5>
+            </div>
+
+            <div>
+                <h5>THIS IS WHERE I'm TESTING THE PROP</h5>
             </div>
 
         </div>

@@ -11,7 +11,8 @@ import Profile from '../pages/Profile'
 function Main(props){
     const [home, setHome] = useState(null);
 
-    const URL = 'https://localhost:3000/';
+    // const URL = 'https://localhost:8000/';
+    const URL = 'http://klng.herokuapp.com/';
 
     const getHome = async() => {
         const response = await fetch (`${URL}`);
@@ -25,12 +26,20 @@ function Main(props){
 
     // ^^^how do we create something if we dont have a create route backend?? 
 
+    // make an initial call for the data inside a useEffect, so it only happens once on component load. [] means run once. 
+    useEffect(() => getHome(), []);
+
+    const dummyobject = {
+        name: "Lennie",
+        project: "cool project"
+    };
+    
     return (
         <div className='Main'>
             <Routes>
                 {/* <Route path='/' render={()=> {<Splash />}} /> */}
                 <Route path='/' element={<Splash />} />
-                <Route path='/home' element={<Home />} />
+                <Route path='/home' element={<Home />} projectdata={home}/>
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/:id/about' element={<ShowPerson />} />

@@ -4,7 +4,7 @@ function ShowProject(props){
     return (
         <div className="ProjDiv">
             <Nav />
-
+            <h1>SHOW PROJECT PAGE</h1>
             <div className="titleDiv">
                 <h3>avatar image here</h3>
                 <h1>name here</h1>
