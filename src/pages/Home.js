@@ -10,7 +10,7 @@ function Home(props){
         props.home.map((ele)=>(
             <div key={ele.id}>
                 <h4>{ele.image_url}</h4>
-                <Link to='/:id/about'> <h1>{ele.name}</h1></Link>
+                <Link to={`/${ele.id}/about`}> <h1>{ele.name}</h1></Link>
                 <h4>{ele.about}</h4>
                 <h5>{ele.github_link}</h5>
                 <h5>{ele.linkedin_link}</h5>
