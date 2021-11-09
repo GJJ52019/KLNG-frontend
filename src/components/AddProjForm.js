@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Modal from './Modal'
+import { useParams } from 'react-router-dom'
 
 
 const wrap = {
@@ -14,10 +15,13 @@ const prof = {
 }
 
 function AddProjForm(props){
+    const params = useParams()
+    const id = params.id
+
     const [newProj, setNewProj] = useState({
-        name: '',
-        images: '',
-        link: '',
+        project_name: '',
+        image_url: '',
+        project_link: '',
         desc: '',
     })
 
@@ -29,10 +33,10 @@ function AddProjForm(props){
         event.preventDefault();
         props.createProj(newProj)
         setNewProj({
-            name: '',
-            images: '',
-            link: '',
-            desc: '', 
+            project_name: '',
+            image_url: '',
+            project_link: '',
+            desc: '',
         })
         setIsOpen(false)
     }
@@ -47,7 +51,7 @@ function AddProjForm(props){
                         <form className="projForm" onSubmit={handleSubmit}>
                             <input className="addName" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.home.project_name} //<-- fix this later
                                 name='name'
                                 placeholder='name'
                                 onChange={handleChange}
@@ -55,7 +59,7 @@ function AddProjForm(props){
                             <br />
                             <input className="addImages" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.home.image_url} //<-- fix this later
                                 name='images'
                                 placeholder='images'
                                 onChange={handleChange}
@@ -63,15 +67,15 @@ function AddProjForm(props){
                             <br />
                             <input className="addGit" 
                                 type='text'
-                                value='text' //<-- fix this later
-                                name='github_link'
-                                placeholder='github project link'
+                                value={props.home.project_link} //<-- fix this later
+                                name='project_link'
+                                placeholder='project_link'
                                 onChange={handleChange}
                             />
                             <br />
                             <input className="addDesc" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.home.desc} //<-- fix this later
                                 name='desc'
                                 placeholder='desc'
                                 onChange={handleChange}

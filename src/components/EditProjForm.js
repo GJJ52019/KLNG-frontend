@@ -15,9 +15,9 @@ const prof = {
 
 function EditProjForm(props){
     const [editProj, setEditProj] = useState({
-        name: '',
-        images: '',
-        link: '',
+        project_name: '',
+        image_url: '',
+        project_link: '',
         desc: '',
     });
 

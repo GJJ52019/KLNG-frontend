@@ -19,6 +19,12 @@ function Main(props){
         const data = await response.json();
         setHome(data);
     }
+    const [project, setProject] = useState(null);
+    const getProject = async() => {
+        const response = await fetch (`${URL}project`);
+        const data = await response.json();
+        setProject(data);
+    }
 
 
     // const createHome = async (post) =>{
@@ -26,8 +32,10 @@ function Main(props){
     // }
  
     useEffect(() => getHome(), []);
+    useEffect(() => getProject(), []);
 
-    console.log(home)
+
+    // console.log(home)
     return (
         <div className='Main'>
             <Routes>
@@ -36,9 +44,9 @@ function Main(props){
                 <Route path='/home' element={<Home home={home} /> } />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
-                <Route path='/:id/about' element={<ShowPerson home={home} />} />
+                <Route path='/:id/about' element={<ShowPerson home={home} project={project} />} />
                 <Route path='/:id/project' element={<ShowProject />} />
-                <Route path='/me' element={<Profile />} />
+                <Route path='/me' element={<Profile home={home}/>} />
             </Routes>
         </div>
     )

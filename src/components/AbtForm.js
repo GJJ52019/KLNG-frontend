@@ -15,10 +15,10 @@ const prof = {
 
 function AbtForm(props){
     const [editProf, setEditProf] = useState({
-        images: '',
+        image_url: '',
         name: '',
         email: '',
-        desc: '', 
+        about: '', 
         github_link: '',
         linkedin_link: '',
     })
@@ -30,10 +30,10 @@ function AbtForm(props){
     const handleSubmit = (event) => {
         event.preventDefault();
         props.updateProf({
-            images: '',
+            image_url: '',
             name: '',
             email: '',
-            desc: '', 
+            about: '', 
             github_link: '',
             linkedin_link: '',
         })

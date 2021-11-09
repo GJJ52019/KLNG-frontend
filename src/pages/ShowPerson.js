@@ -4,28 +4,51 @@ import { useParams } from 'react-router-dom'
 
 
 function ShowPerson(props){
-    const { id } = useParams()
-    // const { about } = useParams()
-    // const idMatch = props.match.id
-    // const people = props.home
-    // const person = people.find(p => p.idMatch === id)
+    const params = useParams()
+    const id = params.id
 
-    // console.log(people)
-    // console.log(person)
-    console.log(id)
+    const id2 = params.id
+    const idP = id2.portfolio_id
+    // const id = props.match.id
+    const people = props.home
+    const person = people.find(p => p.id == id)
 
-    console.log(props)
+    // const person = props.home
+    // const pos = id-1
+    // const pos2 = person[id-1]
+    const pos2 = people[id-1]
+    const projects = pos2.project
+    console.log(props.home)
+    // const proj = props.project[pos2]
+    // console.log(props.project)
+
+    const listprojects = () => {
+        
+        return projects.map((element) => (
+            <div>
+                <Link to={`${element}`}><h1>{element}</h1></Link>
+                <Link to={`${element}`}><img src={element.image_url} alt={element.project_name} /> </Link>
+            </div>
+        ))
+    };
+
+    // const listProj = () => {props.project.map((projs) => (
+    //     <div id="proj2" key2={idP}>
+    //         <h1>{projs.project_name}</h1>
+    //         <Link to='/:id/project'><img src={projs.image_url} alt={projs.project_name} /></Link>
+    //         <br />
+    //     </div>
+    // ))}
+
 
     return (
-        <div>
-            {/* <h1>{id}</h1> */}
-            {/* <h1>{id.about}</h1> */}
-            {/* <h1>{props.filter(id => props.id.map(filteredProp =>(
-                <li>
-                    {filteredProp}
-                </li>
-            ))}</h1> */}
-
+        <div key={id}>
+            <h1>{person.name}</h1>
+            <h1>{person.about}</h1>
+            <br />
+            <h1>{listprojects()}</h1>
+            
+            
         </div>
 //         <div key={id}>
 //             {/* <h4>{ele.image_url}</h4>
