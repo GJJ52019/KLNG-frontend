@@ -50,7 +50,7 @@ function AbtForm(props){
                         <form className="abtForm" onSubmit={handleSubmit}>
                             <input className="editName" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.name} //<-- fix this later
                                 name='name'
                                 placeholder='name'
                                 onChange={handleChange}

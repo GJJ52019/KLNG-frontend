@@ -27,9 +27,34 @@ function Main(props){
     }
 
 
-    // const createHome = async (post) =>{
-    //     await fetch (`${URL}`)
-    // }
+    const createProj = async (post) =>{
+       await fetch (`${URL}project/`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'Application/json',
+            },
+            body: JSON.stringify(post),
+       });
+       getProject();
+    }
+
+    const updateProj = async (proj, id) =>{
+        await fetch (`${URL}project/<int:pk>`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'Application/json',
+            },
+            body: JSON.stringify(proj),
+        })
+        getProject();
+    }
+
+    const deleteProj = async id => {
+        await fetch(`${URL}/${id}`, {
+            method: 'DELETE',
+        })
+        getProject();
+    }
  
     useEffect(() => getHome(), []);
     useEffect(() => getProject(), []);
@@ -46,7 +71,7 @@ function Main(props){
                 <Route path='/register' element={<Register />} />
                 <Route path='/:id/about' element={<ShowPerson home={home} project={project} />} />
                 <Route path='/:id/project' element={<ShowProject />} />
-                <Route path='/me' element={<Profile home={home}/>} />
+                <Route path='/me' element={<Profile home={home} createProj={createProj} updateProj={updateProj} deleteProj={deleteProj} URL={URL}/>} />
             </Routes>
         </div>
     )

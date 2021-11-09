@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Modal from './Modal'
-
+import { useParams } from 'react-router-dom'
 
 const wrap = {
     position: 'relative',
@@ -14,6 +14,11 @@ const prof = {
 }
 
 function EditProjForm(props){
+    const params = useParams();
+    const id = params.id
+    const users = props.home
+    const user = users.find(u => u.id == id)
+
     const [editProj, setEditProj] = useState({
         project_name: '',
         image_url: '',
@@ -27,10 +32,14 @@ function EditProjForm(props){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateProj(editProj)
+        props.updateProj(editProj, user.id)
 
         // need setIsOpen here for modal
         setIsOpen(false)
+    }
+
+    const removeProj = () => {
+        props.deleteProj(user.id);
     }
 
     const [isOpen, setIsOpen] = useState(false);
@@ -43,38 +52,38 @@ function EditProjForm(props){
                         <form className="editProjForm" onSubmit={handleSubmit}>
                             <input className="editName" 
                                 type='text'
-                                value='text' //<-- fix this later
-                                name='name'
-                                placeholder='name'
+                                value= {user.project_name} //<-- fix this later
+                                name='project_name'
+                                placeholder='project_name'
                                 onChange={handleChange}
                             />
                             <br />
                             <input className="editImages" 
                                 type='text'
-                                value='text' //<-- fix this later
-                                name='images'
-                                placeholder='images'
+                                value={user.image_url} //<-- fix this later
+                                name='image_url'
+                                placeholder='image_url'
                                 onChange={handleChange}
                             />
                             <br />
                             <input className="editGit" 
                                 type='text'
-                                value='text' //<-- fix this later
-                                name='github_link'
-                                placeholder='github project link'
+                                value={user.project_link} //<-- fix this later
+                                name='project_link'
+                                placeholder='project project link'
                                 onChange={handleChange}
                             />
                             <br />
                             <input className="editDesc" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={user.desc} //<-- fix this later
                                 name='desc'
                                 placeholder='desc'
                                 onChange={handleChange}
                             />
                             <br />
                             <input type="submit" className="updateBtn" value="Update Project"/>
-                            <input type="submit" className='delBtn' value='Delete'/>
+                            <input type="submit" onClick={removeProj}className='delBtn' value='Delete'/>
                         </form>
                     </Modal>
                 </div>
