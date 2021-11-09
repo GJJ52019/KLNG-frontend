@@ -16,7 +16,7 @@ function Main(props){
 
     // const URL = 'https://localhost:8000/';
     const URL = 'http://klng.herokuapp.com/';
-    const URLproj = 'http://klng.herokuapp.com/proj/';
+    const URLprojlist = 'http://klng.herokuapp.com/project/';
 
     const getHome = async() => {
         const response = await fetch (`${URL}`);
@@ -40,7 +40,7 @@ function Main(props){
 
     // console.log(home)
     // console.log(project)
-    console.log(URLproj)
+    // console.log(URLprojlist)
 
     return (
         <div className='Main'>
@@ -60,7 +60,7 @@ function Main(props){
                     <ShowPerson 
                     home={home} 
                     project={project}
-                    URLproj={URLproj}
+                    URLprojlist={URLprojlist}
                     {...rp}/>
                 )}/>
 
