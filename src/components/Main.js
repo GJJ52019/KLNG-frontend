@@ -1,5 +1,7 @@
+import React from 'react'
 import { useEffect, useState } from 'react' 
-import { Routes, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
+
 import Splash from '../pages/Splash'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
@@ -30,16 +32,28 @@ function Main(props){
     console.log(home)
     return (
         <div className='Main'>
-            <Routes>
+            <Switch>
                 {/* <Route path='/' render={()=> {<Splash />}} /> */}
-                <Route path='/' element={<Splash />} />
-                <Route path='/home' element={<Home home={home} /> } />
-                <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register />} />
-                <Route path='/:id/about' element={<ShowPerson home={home} />} />
-                <Route path='/:id/project' element={<ShowProject />} />
-                <Route path='/me' element={<Profile />} />
-            </Routes>
+                
+                <Route path='/home'>
+                    <Home home={home} />
+                </Route>
+                <Route path='/login'>
+                    <Login />
+                </Route>
+                <Route path='/register' >
+                    <Register />
+                </Route>
+                <Route path='/:id/about' >
+                    <ShowPerson/>
+                </Route>
+                <Route path='/:id/project' >
+                    <ShowPerson/>
+                </Route>
+                <Route path='/me' >
+                    <Profile/>
+                </Route>
+            </Switch>
         </div>
     )
 }
