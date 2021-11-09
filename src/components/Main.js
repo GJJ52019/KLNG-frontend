@@ -29,7 +29,7 @@ function Main(props){
  
     useEffect(() => getHome(), []);
 
-    console.log(home)
+    // console.log(home)
     return (
         <div className='Main'>
             <Switch>
@@ -44,12 +44,17 @@ function Main(props){
                 <Route path='/register' >
                     <Register />
                 </Route>
-                <Route path='/:id/about' >
-                    <ShowPerson/>
-                </Route>
-                <Route path='/:id/project' >
-                    <ShowPerson/>
-                </Route>
+                <Route path='/:id/about' render={(rp) => (
+                    <ShowPerson home={home} {...rp}/>
+                )}/>
+
+                <Route path='/:id/project' render={(rp) => (
+                    <ShowPerson home={home} {...rp}
+                    />
+                    )}
+                />
+                    
+                
                 <Route path='/me' >
                     <Profile/>
                 </Route>

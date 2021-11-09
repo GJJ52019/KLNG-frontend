@@ -1,32 +1,47 @@
 import Nav from "../components/Nav";
 import { Link } from "react-router-dom";
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 
 function ShowPerson(props){
-    const { id } = useParams()
-    // const { about } = useParams()
-    // const idMatch = props.match.id
-    // const people = props.home
-    // const person = people.find(p => p.idMatch === id)
 
-    // console.log(people)
-    // console.log(person)
-    console.log(id)
+    const id = props.match.params.id;
+    const person = props.home;
+    const personinfo = person.find(p => p._id === id);
 
-    console.log(props)
+    const name = person[id-1].name;
+    const about = person[id-1].about;
+    const projects = person[id-1].project;
+
+
+    console.log(id-1);
+    console.log(person[id-1].name);
 
     return (
         <div>
-            {/* <h1>{id}</h1> */}
-            {/* <h1>{id.about}</h1> */}
+            <h1>{name}</h1>
+            
+            {% for i in projects; 
+                
+                <ul>
+                <li><h1>{{projects}}</h1></li>
+                </ul>
+                
+                
+                %};
+
+
+            
+
+       
+            
             {/* <h1>{props.filter(id => props.id.map(filteredProp =>(
                 <li>
                     {filteredProp}
                 </li>
             ))}</h1> */}
-
-        </div>
+            </div>
+        
 //         <div key={id}>
 //             {/* <h4>{ele.image_url}</h4>
 //             <Link to='/:id/about'> <h1>{ele.name}</h1></Link> */}
