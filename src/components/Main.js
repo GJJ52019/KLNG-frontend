@@ -12,14 +12,22 @@ import Profile from '../pages/Profile'
 
 function Main(props){
     const [home, setHome] = useState(null);
+    const [project, setProject] = useState(null);
 
     // const URL = 'https://localhost:8000/';
     const URL = 'http://klng.herokuapp.com/';
+    const URLproj = 'http://klng.herokuapp.com/proj/';
 
     const getHome = async() => {
         const response = await fetch (`${URL}`);
         const data = await response.json();
         setHome(data);
+    }
+
+    const getProject = async() => {
+        const response = await fetch (`${URL}project/`);
+        const data = await response.json();
+        setProject(data);
     }
 
 
@@ -28,8 +36,12 @@ function Main(props){
     // }
  
     useEffect(() => getHome(), []);
+    useEffect(() => getProject(), []);
 
     // console.log(home)
+    // console.log(project)
+    console.log(URLproj)
+
     return (
         <div className='Main'>
             <Switch>
@@ -45,7 +57,11 @@ function Main(props){
                     <Register />
                 </Route>
                 <Route path='/:id/about' render={(rp) => (
-                    <ShowPerson home={home} {...rp}/>
+                    <ShowPerson 
+                    home={home} 
+                    project={project}
+                    URLproj={URLproj}
+                    {...rp}/>
                 )}/>
 
                 <Route path='/:id/project' render={(rp) => (
@@ -54,8 +70,8 @@ function Main(props){
                     )}
                 />
                     
-                
                 <Route path='/me' >
+
                     <Profile/>
                 </Route>
             </Switch>
