@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 function Home(props){
-    console.log(props)
+    // console.log(props)
     // console.log(props.home[0].name)
     
     return (
