@@ -130,7 +130,152 @@ body {
 .App {
     width: 100%;
     // background-color: lightgray;
+    // height: 100%;
 
+}
+
+.splashDiv {
+    width: 80%;
+    margin: 8% auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hsla(75, 80%, 90%, 0.632);
+    border: solid 2px $whitecolor;
+    border-radius: 10px;
+
+
+    
+
+    .titleDiv {
+        width: 100%;
+        margin: 0 auto;
+        // background-color: greenyellow;
+        margin-top: 100px;
+        margin-bottom: 50px;
+
+        .logoDiv {
+            margin: 5px auto;
+            text-align: center;
+            width: 70%;
+            
+            img {
+                width: 100%;
+                transition: transform 100ms;
+            }
+
+        }
+
+        .KLNGDiv {
+            width: 80%;
+            margin: 0 auto;
+            // background-color: red;
+
+            @keyframes titleColorChange {
+                0%   {color: $primarymed;}
+                50%  {color: $tertiarymed;}
+                100% {color: $primarymed;}
+            }
+
+            h1 {
+                font-size: 500%;
+                text-align: center;
+                color: $primarymed;
+                animation-name: titleColorChange;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+            }
+        }
+
+        .SloganDiv {
+            width: 100%;
+            margin: 0 auto;
+            padding: 5px 0;
+            // background-color: #3c0c7276;
+
+            h2 {
+                font-size: 250%;
+                text-align: center;
+                color: $secondarymed;
+                background-color: $secondarydarkmed;
+                background-image: linear-gradient(45deg, $primarylightmed, $secondarymed);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                -moz-background-clip: text;
+                -moz-text-fill-color: transparent;
+            }
+
+
+
+        }
+    }
+
+
+    .submitDiv {
+        width: 80%;
+        margin: 0 auto;
+        // background-color: indigo;
+        color: $tertiarymed;
+
+        .discoverDiv {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            // background-color: pink;
+            h3 {
+                font-size: 22px;
+                text-align: center;
+                color: $tertiarymed;
+            }
+        }
+
+        .enterDiv {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            // background-color: gold;
+            text-align: center;
+            button {
+                cursor: pointer;
+            }
+        }
+
+        .loginSplashDiv , .registerSplashDiv {
+            width: 80%;
+            margin: 5px auto;
+            // background-color: blue;
+            text-align: center;
+
+            .splashLink {
+                color: $tertiarymed;
+
+                h4 {
+                    transition: transform 100ms;
+
+                    &:hover {
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.splashDiv::after {
+    background-image: url(./images/images/AdobeStock_187291550.jpeg);
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .7;
+    z-index: -1;
 }
 
 .HeaderDiv {
@@ -223,11 +368,85 @@ body {
     width: 100%;
     // padding: 5px;
     // height: 100vh;
+    // height: 100%;
 
+    
 
     .personDiv {
-        width: 100%;
-        // background-color: green;
+        width: 90%;
+        background-color: rgba(245, 254, 199, 0.61);
+        margin: 0 auto;
+        margin-top: 20px;
+        padding-top: 20px;
+        border: 2px solid $whitecolor;
+        box-shadow: 0px 0px 4px 0.5px $primarylight;
+        border-radius: 10px;
+        // contain: content;
+
+        .insideMap {
+            width: 100;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            // padding-top: 30px;
+
+            .homeNameDiv {
+                width: 100;
+                margin: 0 auto;
+                text-align: center;
+                margin-bottom: 20px;
+
+                h5 {
+                    color: $quarternarydark;
+                    font-size: normal;
+                }
+
+                h1 {
+                    font-size: x-large;
+                    margin-bottom: 20px;
+                    background-color: $secondarydarkmed;
+                    background-image: linear-gradient(45deg, $primarylightmed, $secondarymed);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent; 
+                    -moz-background-clip: text;
+                    -moz-text-fill-color: transparent;
+                }
+            }
+
+            .homeUL {
+                width: 100%;
+                text-align: center;
+                
+
+                ul {
+                    padding-top: 20px; 
+
+
+                }
+
+            }
+            
+            .homeImgDiv {
+                margin: 5px auto;
+                text-align: center;
+                width: 60%;
+                // background-color: blue;
+                position: relative;
+                object-fit: cover;
+                // border: $whitecolor 4px solid;
+                border-radius: 10px;
+                contain: content;
+                
+                
+
+                img {
+                    width: 100%;
+                }
+
+            }
+
+        }
 
         .avatarDiv {
             width: 100%;
@@ -253,6 +472,68 @@ body {
             // background-color: blue;
             text-align: center;
         }
+
+    }
+
+    .aboutDiv {
+        width: 70%;
+        background-color: rgba(245, 254, 199, 0.61);
+        margin: 0 auto;
+        margin-top: 20px;
+        padding-top: 20px;
+        border: 2px solid $whitecolor;
+        box-shadow: 0px 0px 4px 0.5px $primarylight;
+        border-radius: 10px;
+        text-align: center;
+
+        h1 {
+            font-size: xxx-large;
+            margin-bottom: 40px;
+            background-color: $secondarydarkmed;
+            padding: 6px 0 ;
+            background-image: linear-gradient(45deg, $primarylightmed, $secondarymed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: large;
+            margin-bottom: 40px;
+            color: $primarydark
+        }
+
+        h3 {
+            padding-top: 4px;
+            @include dark-on-light-lime();
+        }
+
+        h4 {
+            color: $primarydark;
+            padding-bottom: 5px;
+            
+        }
+
+        .aboutImgDiv {
+            margin: 5px auto;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 60%;
+            // background-color: blue;
+            position: relative;
+            object-fit: cover;
+            border: rgba(255, 255, 255, 0.322) 1px solid;
+            border-radius: 10px;
+            contain: content;
+            box-shadow: 0px 0px 20px 0.5px rgba(28, 41, 0, 0.666);
+            
+            img {
+                width: 100%;
+            }
+        }
+
 
     }
 
@@ -411,21 +692,25 @@ body {
 
 .Main::after {
     background-image: url(./images/images/AdobeStock_187291550.jpeg);
-    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
     content: "";
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: .4;
+    opacity: .7;
     z-index: -1;
 }
 
 
 
 .FooterDiv {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background: $primarydark;

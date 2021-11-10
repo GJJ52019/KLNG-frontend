@@ -85,7 +85,7 @@ function ShowPerson(props){
         
         return projects.map((element) => (
             <div>
-                <Link to={`${element}`}><h1>{element}</h1></Link>
+                <Link to={`${element}`}><h3>Link to Project</h3><h3 hidden>{element}</h3></Link>
                 <img src="" alt="" />
             </div>
         ))
@@ -95,12 +95,23 @@ function ShowPerson(props){
 // <img src={projID2.image_url} alt="" />
 
     return (
-        <div>
+
+        <div className='aboutDiv'>
             <h1>{name}</h1>
-            <h1>{about}</h1>
-            <h1>{listprojects()}</h1>
-            <h1>{result}</h1>
+            <h4>Project Description</h4>
+            <h2>{about}</h2>
+
+            <h4 hidden>{result}</h4>
+
+            <div className="aboutImgDiv">
+            {/* img tag goes in here */}
             
+            </div>
+
+
+            
+            <h3>{listprojects()}</h3>
+
         </div>
     )
 }

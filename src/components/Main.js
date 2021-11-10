@@ -1,7 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react' 
-import { Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
+import Header from '../components/Header'
+import Footer from '../components/Footer';
 import Splash from '../pages/Splash'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
@@ -44,17 +46,17 @@ function Main(props){
 
     return (
         <div className='Main'>
+            <Header />
             <Switch>
-                {/* <Route path='/' render={()=> {<Splash />}} /> */}
                 
+                <Route exact path='/home'>
+                    <Home home={home} />
+                </Route>
 
-                <Route exact path='/'>
+                <Route path="/Splash">
                     <Splash />
                 </Route>
 
-                <Route path='/home'>
-                    <Home home={home} />
-                </Route>
                 <Route path='/login'>
                     <Login />
                 </Route>
@@ -70,16 +72,19 @@ function Main(props){
                 )}/>
 
                 <Route path='/:id/project' render={(rp) => (
-                    <ShowProject home={home} {...rp}
-                    />
-                    )}
-                />
+                    <ShowProject 
+                    home={home} 
+                    project={project}
+                    URLprojlist={URLprojlist}
+                    {...rp}/>
+                )}/>
                     
                 <Route path='/me' >
 
                     <Profile/>
                 </Route>
             </Switch>
+            <Footer />
         </div>
     )
 }

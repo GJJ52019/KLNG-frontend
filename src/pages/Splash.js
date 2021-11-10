@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
+import LogoGoldShineStroke3 from '../images/logo/KLNG_logo_fourcolorflat.png'
 
 function Splash(props){
     return (
         <div className="splashDiv">
             <div className="titleDiv">
                 <div className="logoDiv">
-                    <h1>Logo goes here...image tingz</h1>
+                    <img src="" alt="" />
+                    <img src={LogoGoldShineStroke3}/>
                 </div>
 
                 <div className="KLNGDiv">
@@ -13,7 +15,7 @@ function Splash(props){
                 </div>
 
                 <div className="SloganDiv">
-                    <h2> To Your Accomplishments.....are we still keeping this phrase??</h2>
+                    <h2> To Your Accomplishments</h2>
                 </div>
             </div>
 
@@ -27,11 +29,11 @@ function Splash(props){
                 </div>
 
                 <div className="loginSplashDiv">
-                    <Link to='/login'>Login</Link>
+                    <Link to='/login' className="splashLink"><h4>Login</h4></Link>
                 </div>
 
                 <div className="registerSplashDiv">
-                    <Link to='/register'>Register</Link>
+                    <Link to='/register' className="splashLink"><h4>Register</h4></Link>
                 </div>
             </div>
 
