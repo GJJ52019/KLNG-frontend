@@ -416,6 +416,12 @@ body {
                     -moz-background-clip: text;
                     -moz-text-fill-color: transparent;
                 }
+
+                h2 {
+                    text-align: left;
+                    padding: 0 80px;
+                    // background-color: blue ;
+                }
             }
 
             .homeUL {
@@ -504,9 +510,13 @@ body {
         }
 
         h2 {
+            // background-color: blue;
+            margin: 0 60px;
             font-size: large;
             margin-bottom: 40px;
-            color: $primarydark
+            color: $primarydark;
+            text-align: left;
+
         }
 
         h3 {
