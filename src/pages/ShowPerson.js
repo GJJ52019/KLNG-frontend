@@ -2,13 +2,11 @@ import Nav from "../components/Nav";
 import { useEffect, useState } from 'react' 
 import { Link } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-// import { useParams } from 'react-router-dom'
-
-
 
 
 function ShowPerson(props){
 
+//#region ---------- First Fetch Start ------------------//
     const URLprojlist = props.URLprojlist;
 
     const [projID, setProjID] = useState(null);
@@ -24,28 +22,31 @@ function ShowPerson(props){
     const id = props.match.params.id;
     const person = props.home;
     const personinfo = person.find(element => element.id == id);
-    // const portfolioId = person.find(portfolio_url);
+//#endregion ---------- First Fetch End ------------------//
 
-// ------------ targeted project --------------------//
+//#region ---- Function to get project slug Start --------//
+    let result = ''
 
-let result = ''
+    const getProjURLSLUG = () => {
+        let youRLArr = personinfo.project
 
-const getProjURLId = () => {
-    let youRLArr = personinfo.project
+        youRLArr.forEach(element => {
+            let str = element
+            // console.log(str.length)
+            str = str.split('');
+            for(let i = 34 ; i < str.length ; i++) {
+                // console.log(str[i])
+                result = str[i]
+            }
+            return result
+        }) 
+    };
 
-    youRLArr.forEach(element => {
-        let str = element
-        // console.log(str.length)
-        str = str.split('');
-        for(let i = 34 ; i < str.length ; i++) {
-            // console.log(str[i])
-            result = str[i]
-        }
-        return result
-    }) 
-};
+    getProjURLSLUG();
 
-getProjURLId();
+//#endregion ---- Function to get project slug End --------//
+
+//#region ---------- Second Fetch Start ------------------//
 
     const URLprojlist2 = (`${props.URLprojlist}${result}`);
 
@@ -57,11 +58,7 @@ getProjURLId();
         setProjID2(data2);
     }
 
-    // const targetProject = projID2
-
     useEffect(() => getProjID2(), []);
-
-    
 
     // const id2 = props.match.params.id;
     // const proj = props.home;
@@ -71,7 +68,7 @@ getProjURLId();
     // const proj = props.project;
     // const projinfo = proj.find(p => p._id === id2);
 
-
+//#endregion --------- Second Fetch End ------------------//
 
     const personid = personinfo.id
     const name = personinfo.name;
@@ -82,6 +79,7 @@ getProjURLId();
 
     // const projimage = projID2.image_url;
      
+    // console.log(projID2.image_url);
 
     const listprojects = () => {
         
@@ -91,9 +89,8 @@ getProjURLId();
                 <img src="" alt="" />
             </div>
         ))
-    };
+};
 
-    // console.log(projID2.image_url);
 
     // <img src={`${projimage}`} alt="" />
 
@@ -103,10 +100,7 @@ getProjURLId();
             <h1>{about}</h1>
             <h1>{listprojects()}</h1>
             <h1>{result}</h1>
-            
-          
 
-            
         </div>
     )
 }
