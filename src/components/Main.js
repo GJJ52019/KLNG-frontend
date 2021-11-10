@@ -65,7 +65,7 @@ function Main(props){
                 )}/>
 
                 <Route path='/:id/project' render={(rp) => (
-                    <ShowPerson home={home} {...rp}
+                    <ShowProject home={home} {...rp}
                     />
                     )}
                 />

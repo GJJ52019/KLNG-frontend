@@ -1,7 +1,10 @@
 import Nav from "../components/Nav";
 import { useEffect, useState } from 'react' 
 import { Link } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 // import { useParams } from 'react-router-dom'
+
+
 
 
 function ShowPerson(props){
@@ -21,28 +24,48 @@ function ShowPerson(props){
     const id = props.match.params.id;
     const person = props.home;
     const personinfo = person.find(element => element.id == id);
+    // const portfolioId = person.find(portfolio_url);
 
 // ------------ targeted project --------------------//
 
-    const URLprojlist2 = (`${props.URLprojlist}${id}`);
+let result = ''
+
+const getProjURLId = () => {
+    let youRLArr = personinfo.project
+
+    youRLArr.forEach(element => {
+        let str = element
+        // console.log(str.length)
+        str = str.split('');
+        for(let i = 34 ; i < str.length ; i++) {
+            // console.log(str[i])
+            result = str[i]
+        }
+        return result
+    }) 
+};
+
+getProjURLId();
+
+    const URLprojlist2 = (`${props.URLprojlist}${result}`);
 
     const [projID2, setProjID2] = useState(null);
 
     const getProjID2 = async() => {
-        const response2 = await fetch (`${URLprojlist}`);
+        const response2 = await fetch (`${URLprojlist2}`);
         const data2 = await response2.json();
         setProjID2(data2);
     }
 
+    // const targetProject = projID2
+
     useEffect(() => getProjID2(), []);
 
-    const projArrayId = props.match.params.id;
-    const projArray = props.project;
-  
-    const projInfo = projArray.find(element => element.id == element.portfolio_id);
+    
 
-    console.log(projID)
-
+    // const id2 = props.match.params.id;
+    // const proj = props.home;
+    // const projInfo = proj.find(element => element.id == id2);
 
     // const id2 = props.match.params.id;
     // const proj = props.project;
@@ -57,7 +80,8 @@ function ShowPerson(props){
     const projects = personinfo.project;
     const projectlist = personinfo.project;
 
-   
+    // const projimage = projID2.image_url;
+     
 
     const listprojects = () => {
         
@@ -69,15 +93,23 @@ function ShowPerson(props){
         ))
     };
 
+    // console.log(projID2.image_url);
 
+    // <img src={`${projimage}`} alt="" />
 
     return (
         <div>
             <h1>{name}</h1>
             <h1>{about}</h1>
             <h1>{listprojects()}</h1>
+            <h1>{result}</h1>
+            
+          
+
+            
         </div>
     )
 }
 
 export default ShowPerson;
+
