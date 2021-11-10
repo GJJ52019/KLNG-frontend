@@ -120,6 +120,10 @@ html {
 
 }
 
+h1 , h2 , h3 , h4 , h5 , h6 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
 
 body {
     width: 100%;
@@ -178,6 +182,7 @@ body {
 
             h1 {
                 font-size: 500%;
+                font-family: Arial, Helvetica, sans-serif;
                 text-align: center;
                 color: $primarymed;
                 animation-name: titleColorChange;
@@ -367,7 +372,6 @@ body {
 .Main {
     width: 100%;
     // padding: 5px;
-    // height: 100vh;
     // height: 100%;
 
     

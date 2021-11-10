@@ -4,20 +4,23 @@ import Main from './components/Main';
 import Header from './components/Header'
 import Footer from './components/Footer';
 import Splash from './pages/Splash';
+import Home from './pages/Home';
 
 
 
 function App() {
   return (
     <div className="App">
+
     <Switch>
         
-        <Route path="/" exact render={()=> <Splash />} />
+        <Route exact path="/" render={()=> <Splash />} />
         <Route path="/">
           <Main />
         </Route>
 
       </Switch>
+
     </div>
   );
 }

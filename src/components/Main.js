@@ -49,20 +49,14 @@ function Main(props){
             <Header />
             <Switch>
                 
+                <Route path="/Splash">
+                    <Splash home={home}/>
+                </Route>
+
                 <Route exact path='/home'>
                     <Home home={home} />
                 </Route>
 
-                <Route path="/Splash">
-                    <Splash />
-                </Route>
-
-                <Route path='/login'>
-                    <Login />
-                </Route>
-                <Route path='/register' >
-                    <Register />
-                </Route>
                 <Route path='/:id/about' render={(rp) => (
                     <ShowPerson 
                     home={home} 
@@ -83,6 +77,15 @@ function Main(props){
 
                     <Profile/>
                 </Route>
+
+                <Route path='/login'>
+                    <Login />
+                </Route>
+
+                <Route path='/register' >
+                    <Register />
+                </Route>
+
             </Switch>
             <Footer />
         </div>

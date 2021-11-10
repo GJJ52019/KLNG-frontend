@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import LogoGoldShineStroke3 from '../images/logo/KLNG_logo_fourcolorflat.png'
 
 function Splash(props){
