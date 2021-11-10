@@ -47,6 +47,11 @@ function Main(props){
             <Switch>
                 {/* <Route path='/' render={()=> {<Splash />}} /> */}
                 
+
+                <Route exact path='/'>
+                    <Splash />
+                </Route>
+
                 <Route path='/home'>
                     <Home home={home} />
                 </Route>

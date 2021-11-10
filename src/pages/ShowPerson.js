@@ -77,7 +77,7 @@ function ShowPerson(props){
     const projects = personinfo.project;
     const projectlist = personinfo.project;
 
-    // const projimage = projID2.image_url;
+
      
     // console.log(projID2.image_url);
 
@@ -92,7 +92,7 @@ function ShowPerson(props){
 };
 
 
-    // <img src={`${projimage}`} alt="" />
+// <img src={projID2.image_url} alt="" />
 
     return (
         <div>
@@ -100,7 +100,7 @@ function ShowPerson(props){
             <h1>{about}</h1>
             <h1>{listprojects()}</h1>
             <h1>{result}</h1>
-
+            
         </div>
     )
 }
