@@ -19,6 +19,9 @@ function EditProjForm(props){
     const users = props.home
     const user = users.find(u => u.id == id)
 
+    const pos = users[id]
+    const userProj = pos.project
+
     const [editProj, setEditProj] = useState({
         project_name: '',
         image_url: '',
@@ -52,7 +55,7 @@ function EditProjForm(props){
                         <form className="editProjForm" onSubmit={handleSubmit}>
                             <input className="editName" 
                                 type='text'
-                                value= {user.project_name} //<-- fix this later
+                                value= {userProj.project_name} //<-- fix this later
                                 name='project_name'
                                 placeholder='project_name'
                                 onChange={handleChange}
@@ -60,7 +63,7 @@ function EditProjForm(props){
                             <br />
                             <input className="editImages" 
                                 type='text'
-                                value={user.image_url} //<-- fix this later
+                                value={userProj.image_url} //<-- fix this later
                                 name='image_url'
                                 placeholder='image_url'
                                 onChange={handleChange}
@@ -68,7 +71,7 @@ function EditProjForm(props){
                             <br />
                             <input className="editGit" 
                                 type='text'
-                                value={user.project_link} //<-- fix this later
+                                value={userProj.project_link} //<-- fix this later
                                 name='project_link'
                                 placeholder='project project link'
                                 onChange={handleChange}
@@ -76,7 +79,7 @@ function EditProjForm(props){
                             <br />
                             <input className="editDesc" 
                                 type='text'
-                                value={user.desc} //<-- fix this later
+                                value={userProj.desc} //<-- fix this later
                                 name='desc'
                                 placeholder='desc'
                                 onChange={handleChange}

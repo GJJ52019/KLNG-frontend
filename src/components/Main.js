@@ -27,16 +27,31 @@ function Main(props){
     }
 
 
-    const createProj = async (post) =>{
-       await fetch (`${URL}project/`, {
+    // const createProj = async (post) =>{
+    //    await fetch (`${URL}project/`, {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'Application/json',
+    //         },
+    //         body: JSON.stringify(post),
+    //    });
+    //    getProject();
+    // }
+
+    async function handleAdd(formInputs) {
+        try {
+          const createProj = await fetch(`${URL}project`, {
             method: "POST",
             headers: {
-                'Content-Type': 'Application/json',
+              "Content-Type": "Application/json",
             },
-            body: JSON.stringify(post),
-       });
-       getProject();
-    }
+            body: JSON.stringify(formInputs),
+          }).then((res) => res.json());
+          setProject({ createProj });
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
     const updateProj = async (proj, id) =>{
         await fetch (`${URL}project/<int:pk>`, {
@@ -47,6 +62,17 @@ function Main(props){
             body: JSON.stringify(proj),
         })
         getProject();
+    }
+
+    const updateProf = async (proj, id) =>{
+        await fetch (`${URL}portfolio/<int:pk>`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'Application/json',
+            },
+            body: JSON.stringify(proj),
+        })
+        getHome();
     }
 
     const deleteProj = async id => {
@@ -71,7 +97,7 @@ function Main(props){
                 <Route path='/register' element={<Register />} />
                 <Route path='/:id/about' element={<ShowPerson home={home} project={project} />} />
                 <Route path='/:id/project' element={<ShowProject />} />
-                <Route path='/me' element={<Profile home={home} createProj={createProj} updateProj={updateProj} deleteProj={deleteProj} URL={URL}/>} />
+                <Route path='/me' element={<Profile home={home} handleAdd={handleAdd} updateProj={updateProj} updateProf={updateProf} deleteProj={deleteProj} URL={URL}/>} />
             </Routes>
         </div>
     )

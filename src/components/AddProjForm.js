@@ -29,13 +29,13 @@ function AddProjForm(props){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.createProj(newProj)
-        // setNewProj({
-        //     project_name: '',
-        //     image_url: '',
-        //     project_link: '',
-        //     desc: '',
-        // })
+        // props.createProj(newProj)
+        setNewProj({
+            project_name: '',
+            image_url: '',
+            project_link: '',
+            desc: '',
+        })
         setIsOpen(false)
         console.log('newProj', newProj)
         console.log('props', props)

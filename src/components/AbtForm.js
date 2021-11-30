@@ -29,14 +29,14 @@ function AbtForm(props){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateProf({
-            image_url: '',
-            name: '',
-            email: '',
-            about: '', 
-            github_link: '',
-            linkedin_link: '',
-        })
+        // props.updateProf({
+        //     image_url: '',
+        //     name: '',
+        //     email: '',
+        //     about: '', 
+        //     github_link: '',
+        //     linkedin_link: '',
+        // })
         setIsOpen(false)
     }
 
@@ -58,31 +58,31 @@ function AbtForm(props){
                             <br />
                             <input className="editImages" 
                                 type='text'
-                                value='text' //<-- fix this later
-                                name='images'
-                                placeholder='images'
+                                value={props.image_url} //<-- fix this later
+                                name='image_url'
+                                placeholder='image_url'
                                 onChange={handleChange}
                             />
                             <br />
-                            <input className="editEmail" 
+                            {/* <input className="editEmail" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.email} //<-- fix this later
                                 name='email'
                                 placeholder='email'
                                 onChange={handleChange}
-                            />
-                            <br />
+                            /> */}
+                            {/* <br /> */}
                             <input className="editDesc" 
                                 type='text'
-                                value='text' //<-- fix this later
-                                name='desc'
-                                placeholder='desc'
+                                value={props.about} //<-- fix this later
+                                name='about'
+                                placeholder='about'
                                 onChange={handleChange}
                             />
                             <br />
                             <input className="editGit" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.github_link} //<-- fix this later
                                 name='github_link'
                                 placeholder='github_link'
                                 onChange={handleChange}
@@ -90,7 +90,7 @@ function AbtForm(props){
                             <br />
                             <input className="editLinked" 
                                 type='text'
-                                value='text' //<-- fix this later
+                                value={props.linkedin_link} //<-- fix this later
                                 name='linkedin_link'
                                 placeholder='linkedin_link'
                                 onChange={handleChange}

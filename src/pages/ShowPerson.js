@@ -40,16 +40,18 @@ function ShowPerson(props){
     //     </div>
     // ))}
 
-
-    return (
-        <div key={id}>
-            <h1>{person.name}</h1>
-            <h1>{person.about}</h1>
-            <br />
-            <h1>{listprojects()}</h1>
+    const loaded = () => {
+        return (
+            <div key={id}>
+                <Nav />
+                <h1>{person.name}</h1>
+                <h1>{person.about}</h1>
+                <br />
+                <h1>{listprojects()}</h1>
+                
+                
+            </div>
             
-            
-        </div>
 //         <div key={id}>
 //             {/* <h4>{ele.image_url}</h4>
 //             <Link to='/:id/about'> <h1>{ele.name}</h1></Link> */}
@@ -80,7 +82,13 @@ function ShowPerson(props){
 //             </div>
 //         </div>
 //         // </div>
-    )
+    )}
+
+    const loading = () => {
+        return <h1>Loading...</h1>
+    }
+
+    {listprojects ? loaded() : loading()}
 }
 
 export default ShowPerson;

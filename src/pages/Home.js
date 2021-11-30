@@ -5,7 +5,7 @@ import { useState } from 'react'
 function Home(props){
     // console.log(props)
     // console.log(props.home[0].name)
-    
+    const loaded = () => {
     return (
         props.home.map((ele)=>(
             <div key={ele.id}>
@@ -42,7 +42,12 @@ function Home(props){
         //     </div>
 
         // </div>
-    )))
+    )))}
+    const loading = () => {
+        return <h1>Loading...</h1>
+    }
+
+    {props.home ? loaded() : loading()}
 }
 
 export default Home;
